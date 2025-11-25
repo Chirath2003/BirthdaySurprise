@@ -8,19 +8,14 @@
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            /* Fun, playful font */
             background: linear-gradient(45deg, #ff69b4, #ffd700, #00ff00, #00bfff, #ff4500);
-            /* Vibrant rainbow gradient */
             background-size: 400% 400%;
-            /* For animation */
             animation: gradientShift 5s ease infinite;
-            /* Animated background */
             color: white;
             text-align: center;
             padding: 20px;
             margin: 0;
-            overflow-x: hidden;
-            /* Prevent horizontal scroll */
+            overflow-x: hidden !important;
         }
 
         @keyframes gradientShift {
@@ -41,7 +36,7 @@
             font-size: 3em;
             margin-bottom: 20px;
             color: #fff;
-            
+
         }
 
         span {
@@ -77,6 +72,23 @@
             margin-bottom: 20px;
             animation: fadeIn 2s ease-in;
             /* Fade in text */
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p {
+                font-size: 1.1em;
+                padding: 0 10px;
+                line-height: 1.5;
+            }
+
+            button {
+                font-size: 1.2em;
+                padding: 12px 20px;
+            }
         }
 
         @keyframes fadeIn {
@@ -164,7 +176,15 @@
             margin: 20px auto;
             max-width: 560px;
             animation: slideIn 1s ease-out;
-            /* Slide in animation */
+            z-index: 10 !important;
+            position: relative;
+        }
+
+        #video-container iframe {
+            width: 100% !important;
+            height: 200px !important;
+            max-width: 100%;
+            border-radius: 10px;
         }
 
         @keyframes slideIn {
@@ -201,7 +221,6 @@
 
         .photo:hover {
             transform: scale(1.1) rotate(5deg);
-            /* Zoom and rotate on hover */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
         }
 
@@ -240,6 +259,11 @@
             100% {
                 transform: translateY(-110vh) translateX(-40px);
             }
+        }
+
+        .balloon,
+        .confetti {
+            z-index: 0 !important;
         }
 
         .firework {
@@ -282,6 +306,13 @@
             100% {
                 transform: scale(1.4);
                 opacity: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .balloon {
+                font-size: 2.5em;
+                opacity: 0.7;
             }
         }
     </style>
